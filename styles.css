@@ -1,0 +1,18 @@
+#libraryContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+}
+.bookTile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    border: 2px solid black;
+    text-align: center;
+}
+table {
+    width: 100%;
+    text-align: left;
+    padding: 6px;
+}
