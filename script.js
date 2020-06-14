@@ -3,7 +3,13 @@ let myLibrary = [];
 render();
 
 const addBookButton = document.querySelector("#addBookButton");
-addBookButton.addEventListener("click",addBookToLibrary);
+addBookButton.addEventListener("click",displayPopUp);
+
+const addButton = document.querySelector("#addButton");
+addButton.addEventListener("click",addBookToLibrary);
+
+const cancelButton = document.querySelector("#cancelButton");
+cancelButton.addEventListener("click",hidePopUp);
 
 function Book(title,author,pages,read) {
     this.title = title;
@@ -16,19 +22,14 @@ function Book(title,author,pages,read) {
 }
 
 function addBookToLibrary(){
-    const title = prompt("What is the book's title?","");
-    const author = prompt("Who is the book's author?");
-    const pages = parseInt(prompt("How many pages does the book have?"));
-    let read = prompt("Have you read the book?");
-    read = read.toLowerCase();
-    while (read !== "yes" && read !== "no"){
-        read = prompt("Have you read this book? Please enter 'Yes' or 'No'");
-        read = read.toLowerCase();
-    }
-    read = capitalise(read);
+    const title = document.querySelector("#Title").value;
+    const author = document.querySelector("#Author").value;
+    const pages = document.querySelector("#Pages").value;
+    const read = document.querySelector('input[name="readRadio"]:checked').value;
     const newBook = new Book(title,author,pages,read);
     myLibrary.push(newBook);
-    render()
+    hidePopUp();
+    render();
 }
 
 function render(){
@@ -68,4 +69,13 @@ function capitalise(str){
     firstLetter = str.slice(0,1);
     capitalised = str.replace(firstLetter,firstLetter.toUpperCase())
     return capitalised
+}
+
+function displayPopUp(){
+    const popUpDiv = document.querySelector("#popUpDiv");
+    popUpDiv.setAttribute("style","display: flex");
+}
+function hidePopUp(){
+    const popUpDiv = document.querySelector("#popUpDiv");
+    popUpDiv.setAttribute("style","display: none");
 }

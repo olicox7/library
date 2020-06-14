@@ -16,3 +16,44 @@ table {
     text-align: left;
     padding: 6px;
 }
+#popUpDiv {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    margin-left: -260px;
+    display:none;
+    flex-direction: column;
+    width: 520px;
+    align-items: center;
+    border: 3px solid black;
+    padding: 10px;
+    background-color: cornflowerblue;
+}
+.formButton {
+    width: 80px;
+}
+#addBookForm {
+    display: grid;
+    grid-template-columns: auto 2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    width: 500px;
+    justify-items: center;
+}
+.formElement {
+    margin: 5px;
+    width: 80%;
+}
+#radioSpan {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+input[type="radio"] {
+    width: auto;
+    margin: auto 10px auto 10px;
+}
+.formHeading {
+    margin: auto auto auto auto;
+    font-weight: bold;
+}

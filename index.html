@@ -8,6 +8,22 @@
     <body>
         <h1>Welcome to your Library</h1>
         <button id=addBookButton>Add Book</button>
+        <div id="popUpDiv">
+            <form id="addBookForm" action="">
+                <label class="formHeading">Title</label><input id="Title" class="formElement" type="text">
+                <label class="formHeading">Author</label><input id="Author" class="formElement" type="text">
+                <label class="formHeading">Pages</label><input id="Pages" class="formElement" type="number" min="1" max="10000">
+                <label class="formHeading" for="readRadio">Read status</label>
+                <span id="radioSpan" class="formElement">
+                    <label>Read<input class="formElement" type="radio" name="readRadio" value="Read" checked></label>
+                    <label>Unread<input class="formElement" type="radio" name="readRadio" value="Unread"></label>
+                </span>
+            </form>
+            <span id="buttonSpan">
+                <button id="addButton" class="formButton">Add</button>
+                <button id="cancelButton" class="formButton">Cancel</button>
+            </span>
+        </div>
         <div id="libraryContainer">
             <div class="bookTile">
                 <table>
